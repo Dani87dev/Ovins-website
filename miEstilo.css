@@ -1,5 +1,5 @@
 /* =========================================================
-   RESET BÀSIC
+   RESET GLOBAL
 ========================================================= */
 * {
     margin: 0;
@@ -8,11 +8,11 @@
 }
 
 /* =========================================================
-   BODY (global)
+   BODY
 ========================================================= */
 body {
-    padding-top: 56px; /* espai sota navbar fixa (PC) */
     font-family: Arial, Helvetica, sans-serif;
+    padding-top: 56px;    /* Espai per al navbar en PC */
 }
 
 /* =========================================================
@@ -29,6 +29,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10000;
 }
 
 .logo {
@@ -54,7 +55,7 @@ body {
 }
 
 /* =========================================================
-   HEADER — HERO
+   HERO HEADER
 ========================================================= */
 .hero {
     width: 100%;
@@ -115,7 +116,7 @@ body {
 }
 
 .seccio-titol {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
     font-size: 40px;
     color: #222;
     margin-bottom: 20px;
@@ -268,15 +269,20 @@ body {
 ========================================================= */
 @media (max-width: 700px) {
 
-    /* SOLUCIÓ: treure espai blanc damunt la imatge */
+    /* ✔ CREA ESPAI PER AL NAVBAR (SOLUCIÓ DEFINITIVA) */
     body {
-        padding-top: 0 !important;
+        padding-top: 100px !important;
     }
 
+    /* NAVBAR */
     .navbar {
-        padding: 10px 15px;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 6px;
+        padding: 12px 15px;
+        background-color: #000 !important;
+        z-index: 99999 !important;
     }
 
     .logo {
@@ -290,20 +296,17 @@ body {
         gap: 10px;
     }
 
+    /* HERO */
     .hero {
         height: 330px;
         margin-top: 0 !important;
         background-position: center top;
     }
 
-    .hero-fade {
-        background: rgba(0, 0, 0, 0.35);
-    }
-
     .hero-content {
         transform: none;
-        padding: 10px 8px;
         margin-top: 20px;
+        padding: 10px 8px;
     }
 
     .hero-content h1 {
@@ -314,6 +317,7 @@ body {
         font-size: 16px;
     }
 
+    /* NOTÍCIES */
     .noticies {
         width: 92%;
         margin-top: 40px;
@@ -323,6 +327,7 @@ body {
         height: 160px;
     }
 
+    /* FOOTER */
     .footer {
         flex-direction: column;
         gap: 10px;
@@ -330,5 +335,4 @@ body {
         text-align: center;
     }
 }
-
-/* v1*/
+/*v2respons*/
