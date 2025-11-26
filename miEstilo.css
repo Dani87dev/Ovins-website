@@ -11,7 +11,7 @@
    BODY (global)
 ========================================================= */
 body {
-    padding-top: 56px; 
+    padding-top: 56px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -126,8 +126,8 @@ body {
 .noticia {
     background: white;
     border-radius: 16px;
-    overflow: hidden; 
-    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.12);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
@@ -136,7 +136,7 @@ body {
 
 .noticia:hover {
     transform: translateY(-6px);
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.2);
 }
 
 .noticia-img {
@@ -287,7 +287,7 @@ body {
 
     .hero {
         height: 330px;
-        margin-top: 60px;
+        margin-top: 0;     /* ✔️ ARREGLAT: sense espai blanc */
         background-position: center top;
     }
 
