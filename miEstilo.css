@@ -1,4 +1,4 @@
-/* DANI=========================================================
+/* =========================================================
    RESET BÀSIC
 ========================================================= */
 * {
@@ -11,7 +11,7 @@
    BODY (global)
 ========================================================= */
 body {
-    padding-top: 56px;
+    padding-top: 56px; /* espai sota navbar fixa (PC) */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -115,7 +115,7 @@ body {
 }
 
 .seccio-titol {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
     font-size: 40px;
     color: #222;
     margin-bottom: 20px;
@@ -126,8 +126,8 @@ body {
 .noticia {
     background: white;
     border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0px 4px 18px rgba(0,0,0,0.12);
+    overflow: hidden; 
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.12);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
@@ -136,7 +136,7 @@ body {
 
 .noticia:hover {
     transform: translateY(-6px);
-    box-shadow: 0px 8px 24px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .noticia-img {
@@ -264,9 +264,14 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE MÒBIL
+   RESPONSIVE — MÒBIL
 ========================================================= */
 @media (max-width: 700px) {
+
+    /* SOLUCIÓ: treure espai blanc damunt la imatge */
+    body {
+        padding-top: 0 !important;
+    }
 
     .navbar {
         padding: 10px 15px;
@@ -287,7 +292,7 @@ body {
 
     .hero {
         height: 330px;
-        margin-top: 0;     /* ✔️ ARREGLAT: sense espai blanc */
+        margin-top: 0 !important;
         background-position: center top;
     }
 
@@ -307,7 +312,6 @@ body {
 
     .hero-content h2 {
         font-size: 16px;
-        margin-top: 8px;
     }
 
     .noticies {
@@ -326,3 +330,5 @@ body {
         text-align: center;
     }
 }
+
+/* v1*/
