@@ -1,5 +1,333 @@
-body {
+/* =========================================================
+   1) RESET BÀSIC
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  background-color: blue; 
-  
+/* =========================================================
+   2) BODY (global)
+========================================================= */
+body {
+    padding-top: 56px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   3) NAVBAR
+========================================================= */
+.navbar {
+    width: 100%;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #f0a500;
+}
+
+/* =========================================================
+   4) HEADER — HERO
+========================================================= */
+.hero {
+    width: 100%;
+    height: 420px;
+    background-image: url('portada.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Capa per reduir l'opacitat */
+.hero-fade {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+}
+
+/* Contingut */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    transform: translateY(-70%);
+}
+
+/* Títols */
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+/* Contorn i ombra del text */
+.hero-content h1,
+.hero-content h2 {
+    -webkit-text-stroke: 1px rgba(0,0,0,0.9);
+    text-shadow: 0px 3px 8px rgba(0,0,0,0.4);
+}
+
+/* =========================================================
+   5) TÍTOLS GENERALS (fora del hero)
+========================================================= */
+.titol {
+    text-align: center;
+    padding: 20px;
+}
+
+.titol h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.titol h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* =========================================================
+   6) NOTÍCIES — GRID
+========================================================= */
+
+/* Contenidor GRID amb targetes verticals */
+.noticies {
+    width: 85%;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+/* Títol secció */
+.seccio-titol {
+    grid-column: 1/-1;
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Targeta vertical */
+.noticia {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden; 
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.noticia:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Imatge vertical */
+.noticia-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Contingut */
+.noticia-contingut {
+    padding: 20px;
+}
+
+.noticia-contingut h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.noticia-contingut p {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+/* Botó */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: #333;
+}
+
+/* =========================================================
+   7) FOOTER
+========================================================= */
+.footer {
+    background: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 25px 10px;
+    font-size: 15px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-item a:hover {
+    text-decoration: underline;
+}
+
+.footer-ig svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    position: relative;
+    top: 0px;
+}
+
+/* =========================================================
+   8) RESPONSIVE (mòbils)
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Notícies: 1 columna */
+    .noticies {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   FÒRUM
+========================================================= */
+.forum {
+    width: 85%;
+    margin: 100px auto;
+}
+
+.forum-titol {
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.tema {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tema-titol {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.missatges {
+    margin-bottom: 20px;
+}
+
+.missatge {
+    background: #f2f2f2;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 15px;
+}
+
+.forum-input {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.btn-forum {
+    padding: 10px 18px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-forum:hover {
+    background: #333;
 }
