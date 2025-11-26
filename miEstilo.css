@@ -1,81 +1,324 @@
-/* ============================
-   VERSIÓ MÒBIL MILLORADA
-============================ */
+/* DANI=========================================================
+   RESET BÀSIC
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   BODY (global)
+========================================================= */
+body {
+    padding-top: 56px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+    width: 100%;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #f0a500;
+}
+
+/* =========================================================
+   HEADER — HERO
+========================================================= */
+.hero {
+    width: 100%;
+    height: 420px;
+    background-image: url('portada.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-fade {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    transform: translateY(-70%);
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.hero-content h1,
+.hero-content h2 {
+    -webkit-text-stroke: 1px rgba(0,0,0,0.9);
+    text-shadow: 0px 3px 8px rgba(0,0,0,0.4);
+}
+
+/* =========================================================
+   NOTÍCIES — GRID
+========================================================= */
+.noticies {
+    width: 85%;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+.seccio-titol {
+    grid-column: 1/-1;
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.noticia {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden; 
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.noticia:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.noticia-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.noticia-contingut {
+    padding: 20px;
+}
+
+.noticia-contingut h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.noticia-contingut p {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: #333;
+}
+
+/* =========================================================
+   FÒRUM
+========================================================= */
+.forum {
+    width: 85%;
+    margin: 100px auto;
+}
+
+.forum-titol {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tema {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.tema-titol {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.missatges {
+    margin-bottom: 20px;
+}
+
+.missatge {
+    background: #f2f2f2;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.forum-input {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.btn-forum {
+    padding: 10px 18px;
+    background: #000;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+    background: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 25px 10px;
+    font-size: 15px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-item a {
+    color: white;
+}
+
+.footer-ig svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+/* =========================================================
+   RESPONSIVE MÒBIL
+========================================================= */
 @media (max-width: 700px) {
 
-    /* NAVBAR — compactat i amb fons sòlid */
     .navbar {
         padding: 10px 15px;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: 6px;
-        background-color: #000;
     }
 
     .logo {
         font-size: 1.1rem;
         text-align: center;
-        width: 100%;
     }
 
     .nav-links {
-        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-        font-size: 0.9rem;
     }
 
-    /* HERO — evitar que el navbar tapi el títol */
     .hero {
         height: 330px;
-        margin-top: 60px;          /* ESPAI PER SOTA DEL NAVBAR */
-        background-size: cover;
+        margin-top: 60px;
         background-position: center top;
     }
 
-    /* Ajustem opacitat i visibilitat */
     .hero-fade {
         background: rgba(0, 0, 0, 0.35);
     }
 
-    /* Text del títol — més petit i centrat bé */
     .hero-content {
-        transform: none;            /* treu el -70% que trenca tot */
+        transform: none;
         padding: 10px 8px;
         margin-top: 20px;
     }
 
     .hero-content h1 {
         font-size: 30px;
-        line-height: 1.2;
-        text-align: center;
     }
 
     .hero-content h2 {
         font-size: 16px;
-        text-align: center;
         margin-top: 8px;
     }
 
-    /* NOTÍCIES */
     .noticies {
         width: 92%;
         margin-top: 40px;
     }
 
-    .noticia {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .noticia-img {
-        width: 100%;
         height: 160px;
     }
 
-    /* FOOTER */
     .footer {
         flex-direction: column;
         gap: 10px;
